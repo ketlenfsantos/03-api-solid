@@ -3,7 +3,7 @@
 name: Run Unit Tests
 #quando que quero executar
 
-on: [psuh] #toda vez que algum usuário fizer git push vai acontecer a seguinte sequencia
+on: [push] #toda vez que algum usuário fizer git push vai acontecer a seguinte sequencia
 
 jobs: 
   run-unit-tests:
