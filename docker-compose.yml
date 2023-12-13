@@ -1,0 +1,18 @@
+#documento dockercompose para que outros usuários possam acessar SEM precisar colocar a sintaxe:
+#docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker
+#-e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
+#docker compose up -d   //EXECUTA O CONTAINER
+#docker compose stop // interrompe
+
+#quem baixar a aplicaçao tera acesso a este arquivo
+version: '3'
+
+services:
+  api-solid-pg:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=ignitenode03

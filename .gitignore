@@ -1,0 +1,7 @@
+#ignora pasta node_modules pra n ficar executando
+
+node_modules
+build
+coverage
+.env
+

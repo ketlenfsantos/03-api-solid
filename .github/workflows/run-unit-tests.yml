@@ -1,0 +1,23 @@
+#comandos que quero executar
+
+name: Run Unit Tests
+#quando que quero executar
+
+on: [psuh] #toda vez que algum usuário fizer git push vai acontecer a seguinte sequencia
+
+jobs: 
+  run-unit-tests:
+  name: Run Unit Tests
+  runs-on: ubuntu-latest
+#o que eu quero que esse jobs execute
+  steps: 
+  - uses: actions/checkout@v3 #baixar o código
+
+  - uses: actions/setup-node@v3 #baixa o Node
+    with:
+    node-version: 18
+    cache: 'npm'
+  #rodar comando
+  - run: npm ci #e igual instalar, mas nao faz nenhuma pergunta ou alteraçao
+  
+  - run: npm run test #executar os testes unitários
